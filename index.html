@@ -56,7 +56,10 @@
       </div>
 
       <!-- Desktop Menu -->
-      <nav class="hidden md:flex gap-5 list-none font-semibold text-slate-400">
+      <nav
+        id="navbar"
+        class="hidden md:flex gap-5 list-none font-semibold text-slate-400"
+      >
         <li
           class="hover:hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-br hover:from-blue-500 hover:via-violet-500 hover:to-purple-700 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-br before:from-blue-500 before:via-violet-500 before:to-purple-700 before:transition-all before:duration-300 hover:before:w-full cursor-pointer"
         >
@@ -131,19 +134,27 @@
           online. Let’s create something amazing together.
         </p>
         <div>
-          <div class="md:ml-5">
+          <div class="flex gap-2 md:ml-5">
             <button
               class="border px-9 py-3 animate-fade-slide-up rounded-lg text-slate-400 font-semibold hover:text-slate-600 mb-5"
             >
-              Contact Me
+              Contact Me <i class="fa-solid fa-phone"></i>
+            </button>
+            <button
+              class="border px-9 py-3 animate-fade-slide-up rounded-lg text-slate-400 font-semibold hover:text-slate-600 mb-5"
+            >
+              Hire Me <i class="fa-solid fa-envelope"></i>
             </button>
           </div>
-          <div class="text-[27px] animate-fade-slide-up mb-16 ml-7 md:ml-7">
+          <div
+            class="text-[27px] animate-fade-slide-up mb-20 ml-[90px] md:ml-7"
+          >
             <i class="fab fa-instagram mr-3"></i>
 
             <i class="fab fa-facebook mr-3"></i>
 
-            <i class="fab fa-github"></i>
+            <i class="fab fa-github mr-3"></i>
+            <i class="fa-solid fa-envelope"></i>
           </div>
         </div>
       </div>
@@ -162,6 +173,27 @@
       const toggle = document.getElementById("toggleDark");
       toggle.addEventListener("click", () => {
         document.documentElement.classList.toggle("dark");
+      });
+
+      const nav = document.getElementById("navbar");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 0) {
+          nav.classList.add("fixed", "top-0", "z-50", "shadow-md");
+        } else {
+          nav.classList.remove("fixed", "top-0", "z-50", "shadow-md");
+        }
+      });
+    </script>
+    <script>
+      const nav = document.getElementById("navbar");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 0) {
+          nav.classList.add("fixed", "top-0", "z-50", "shadow-md");
+        } else {
+          nav.classList.remove("fixed", "top-0", "z-50", "shadow-md");
+        }
       });
     </script>
   </body>
