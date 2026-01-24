@@ -109,7 +109,11 @@
         <i class="fa-solid text-slate-300 fa-moon mr-2 hidden md:inline"></i>
 
         <!-- Hamburger Button for Mobile -->
-        <button @click="open = !open" class="md:hidden focus:outline-none">
+        <button
+          @click="open = !open"
+          id="toggle"
+          class="md:hidden focus:outline-none"
+        >
           <i class="fa-solid -mr-14 fa-bars text-white text-5xl"></i>
         </button>
       </div>
@@ -201,7 +205,11 @@
         </div>
       </div>
       <div class="relative">
-        <img src="/image/HH.jpeg" alt="" class="md:w-[430px] rounded-r-full" />
+        <img
+          src="/image/WhatsApp Image 2026-01-24 at 4.58.59 AM.jpeg"
+          alt=""
+          class="md:w-[430px] rounded-r-full"
+        />
         <span
           class="text-white border px-3 py-3 text-xs md:px-4 md:py-3 md:text-[8px] font-semibold float-icon rounded-lg top-[8%] right-[5%] absolute"
           ><i class="fas fa-tachometer-alt text-white"></i> PERFORMANCE
@@ -224,7 +232,9 @@
 
     <div>
       <div class="text-center mt-9">
-        <h1 class="font-semibold text-white md:text-4xl text-[29px]">
+        <h1
+          class="font-semibold bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-violet-500 to-purple-700 md:text-4xl text-[29px]"
+        >
           Core Competencies
         </h1>
         <p class="text-slate-300 mt-3 md:text-[23px] p-2 text-[19px]">
@@ -319,7 +329,9 @@
 
     <div>
       <div class="text-center mt-9">
-        <h1 class="font-semibold text-white md:text-4xl text-[29px]">
+        <h1
+          class="font-semibold bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-violet-500 to-purple-700 md:text-4xl text-[29px]"
+        >
           Selected Works
         </h1>
         <p class="text-slate-300 mt-3 md:text-[23px] p-3 text-[19px]">
@@ -342,7 +354,10 @@
       </button>
     </div>
 
-    <div class="md:grid-cols-2 grid md:gap-8 md:p-20 p-5">
+    <div
+      id="carousel"
+      class="md:grid-cols-2 grid md:gap-8 md:p-20 p-5 flex transition-transform duration-500 easa-in-out"
+    >
       <div
         class="bg-white transition rounded-3xl transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(139,92,246,0.5)] cursor-pointer"
       >
@@ -649,6 +664,82 @@
         </div>
       </div>
     </div>
+    <div class="flex justify-center gap-4 mt-10">
+      <button
+        onclick="goToSlide(0)"
+        class="px-4 py-2 rounded-full bg-black text-white hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(139,92,246,0.5)] cursor-pointer"
+      >
+        1
+      </button>
+      <button
+        onclick="goToSlide(1)"
+        class="px-4 py-2 rounded-full bg-black text-white hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(139,92,246,0.5)] cursor-pointer"
+      >
+        2
+      </button>
+      <button
+        onclick="goToSlide(2)"
+        class="px-4 py-2 rounded-full bg-black text-white hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(139,92,246,0.5)] cursor-pointer"
+      >
+        3
+      </button>
+    </div>
+
+    <div class="md:flex gap-10 ml-10 md:justify-center items-center">
+      <div class="p-9 rounded-3xl">
+        <img
+          src="/image/WhatsApp Image 2026-01-23 at 12.18.18 PM.jpeg"
+          class="md:w-[3800px]"
+          alt=""
+        />
+      </div>
+      <div class="p-9">
+        <h1
+          class="font-semibold mb-7 bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-violet-500 to-purple-700 md:text-[20px] text-[29px]"
+        >
+          My Philosophy
+        </h1>
+        <h2 class="font-semibold text-white mb-6 md:text-4xl text-[29px]">
+          Good Enough is Never Enough.
+        </h2>
+        <p class="font-semibold text-slate-300 text-[18px] mb-5">
+          My coding journey started with curiosity and a desire to build
+          something meaningful. At first, everything felt unfamiliar new terms,
+          new rules, new ways of thinking. Simple lines of code looked
+          confusing, and errors felt frustrating. But instead of quitting, I
+          leaned into the discomfort. As I began learning website design, I
+          realized coding isn’t just about writing commands it’s about
+          problem-solving, creativity, and patience. Every small win, from
+          fixing a bug to creating a simple layout, gave me confidence. Each
+          challenge taught me how to think logically and approach problems step
+          by step. There were moments I doubted myself, but I reminded myself
+          why I started: to grow, to learn a valuable skill, and to create
+          opportunities for my future. With consistency and practice, things
+          that once seemed impossible started making sense. My coding journey is
+          still ongoing, and I’m proud of how far I’ve come. Every day, I’m
+          learning, improving, and getting closer to becoming the developer I
+          envision. This is just the beginning.
+        </p>
+        <hr />
+        <div class="text-slate-300 flex gap-20 mt-4">
+          <div>
+            <h1 class="font-semibold text-2xl">2+</h1>
+            <p class="font-semibold text-[15px]">Years Experience</p>
+          </div>
+          <div>
+            <h1 class="font-semibold text-2xl">10+</h1>
+            <p class="font-semibold text-[15px]">Projects Shipped</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const carousel = document.getElementById("carousel");
+
+      function goToSlide(index) {
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+      }
+    </script>
 
     <script>
       const words = ["Mobile Developer", "Frontend Developer", "Web Developer"];
