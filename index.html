@@ -17,6 +17,27 @@
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <style>
+      /* Floating animation */
+      @keyframes floatUpDown {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-15px);
+        } /* moves up */
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .float-icon {
+        display: inline-block;
+        font-size: 50px;
+        color: #4caf50;
+        animation: floatUpDown 3s ease-in-out infinite; /* slow, smooth, continuous */
+      }
+    </style>
 
     <style>
       /* Custom keyframes for fade + slide animation */
@@ -40,18 +61,19 @@
       }
     </style>
   </head>
-  <body class="w-full font-grotesk">
+  <body class="w-full font-grotesk bg-gradient-to-r from-gray-900 to-black">
     <div
-      class="flex justify-between px-[60px] border shadow-md items-center p-5"
+      class="flex justify-between px-[60px] shadow-md items-center p-5"
       x-data="{ open: false }"
     >
       <!-- Logo + Search -->
       <div class="flex gap-2">
-        <img
-          src="/image/WhatsApp Image 2026-01-21 at 11.53.23 AM.jpeg"
-          class="w-[80px] h-[60px]"
-          alt="Logo"
-        />
+        <h1
+          class="text-[20px] font-semibold bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-violet-500 to-purple-700"
+        >
+          FERANMI SOLOMON
+        </h1>
+
         <div class="hidden md:flex"></div>
       </div>
 
@@ -84,11 +106,11 @@
 
       <!-- Icons + Mobile Hamburger -->
       <div class="flex items-center gap-2">
-        <i class="fa-solid fa-moon mr-2 hidden md:inline"></i>
+        <i class="fa-solid text-slate-300 fa-moon mr-2 hidden md:inline"></i>
 
         <!-- Hamburger Button for Mobile -->
         <button @click="open = !open" class="md:hidden focus:outline-none">
-          <i class="fa-solid -mr-14 fa-bars text-5xl"></i>
+          <i class="fa-solid -mr-14 fa-bars text-white text-5xl"></i>
         </button>
       </div>
 
@@ -108,23 +130,34 @@
         </div>
       </div>
     </div>
-    <div
-      class="md:flex gap-[40px] md:h-[800px] rounded-b-full bg-gradient-to-br from-blue-500 via-violet-500 to-purple-700"
-    >
+    <div class="md:flex mt-20">
       <div
-        class="md:w-[500px] md:ml-[200px] p-5 flex items-center md:place-items-start flex-col justify-center h-screen"
+        class="p-5 md:flex items-center md:place-items-start md:flex-col md:justify-center"
       >
         <h1
-          class="font-semibold opacity-0 animate-fade-slide-up mt-[90px] text-slate-400 p-5 text-center text-[30px]"
+          class="border w-[200px] md:w-[250px] px-4 py-2 md:py-2 md:px-5 shadow-md rounded-full ml-2 md:ml-5 font-semibold bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-violet-500 to-purple-700"
         >
-          Hi,
+          PERSONAL PORTFOLIO
+        </h1>
+        <h1
+          class="font-semibold -ml-5 opacity-0 text-[39px] p-9 md:text-[60px] bg-clip-text text-transparent bg-gradient-to-br from-white via-grey-400 to-black animate-fade-slide-up"
+        >
+          Hi, I’m
           <span
-            class="bg-clip-text text-transparent bg-gradient-to-br from-blue-300 via-violet-700 to-purple-700"
-            >I’m Feranmi.</span
+            class="bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-violet-500 to-purple-700"
+          >
+            Feranmi.</span
           >
         </h1>
+
+        <h1 class="text-[20px] font-semibold ml-3 md:ml-5 md:text-2xl">
+          <span
+            id="typing-text"
+            class="bg-gradient-to-br from-blue-500 via-violet-500 to-purple-700 rounded-full border-r-2 border-gray-300 pl-2"
+          ></span>
+        </h1>
         <p
-          class="font-semibold opacity-0 text-center md:text-left animate-fade-slide-up p-4 text-[19px] text-slate-400"
+          class="md:w-[700px] font-semibold opacity-0 md:text-left animate-fade-slide-up p-4 text-[19px] text-slate-400"
         >
           I’m a web developer who builds modern, responsive, and user-friendly
           websites. I specialize in turning ideas into digital experiences that
@@ -134,41 +167,520 @@
           online. Let’s create something amazing together.
         </p>
         <div>
-          <div class="flex gap-2 md:ml-5">
+          <div class="flex gap-2 md:ml-5 ml-3 mt-3">
             <button
-              class="border px-9 py-3 animate-fade-slide-up rounded-lg text-slate-400 font-semibold hover:text-slate-600 mb-5"
+              class="border bg-gray-400 text-black px-4 py-2 md:px-9 md:py-3 animate-fade-slide-up mr-4 rounded-lg font-semibold hover:text-slate-600 mb-5"
             >
               Contact Me <i class="fa-solid fa-phone"></i>
             </button>
             <button
-              class="border px-9 py-3 animate-fade-slide-up rounded-lg text-slate-400 font-semibold hover:text-slate-600 mb-5"
+              class="border animate-fade-slide-up rounded-lg px-4 py-4 md:px-9 text-slate-400 font-semibold hover:text-slate-600 mb-5"
             >
               Hire Me <i class="fa-solid fa-envelope"></i>
             </button>
           </div>
           <div
-            class="text-[27px] animate-fade-slide-up mb-20 ml-[90px] md:ml-7"
+            class="text-[27px] text-slate-300 animate-fade-slide-up mb-20 md:ml-5 ml-3 mt-5"
           >
-            <i class="fab fa-instagram mr-3"></i>
+            <i
+              class="fab fa-instagram mr-3 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-br hover:from-blue-500 hover:via-violet-500"
+            ></i>
 
-            <i class="fab fa-facebook mr-3"></i>
+            <i class="fab fa-facebook mr-3 hover:text-black"></i>
 
-            <i class="fab fa-github mr-3"></i>
-            <i class="fa-solid fa-envelope"></i>
+            <i class="fab fa-github mr-3 hover:text-black"></i>
+            <i class="fab fa-twitter mr-3 hover:text-black"></i>
+            <i class="fa-solid fa-envelope hover:text-black"></i>
           </div>
         </div>
       </div>
-      <div class="">
-        <img
-          src="/image/WhatsApp Image 2026-01-21 at 11.53.24 AM.jpeg"
-          alt=""
-          class="w-32 md:w-[280px] rounded-full ml-32 pb-4 md:mt-28 shadow-md"
-        />
+      <div class="relative">
+        <img src="/image/HH.jpeg" alt="" class="md:w-[430px] rounded-r-full" />
+        <span
+          class="text-white border px-3 py-3 text-xs md:px-4 md:py-3 md:text-[8px] font-semibold float-icon rounded-lg top-[8%] right-[5%] absolute"
+          ><i class="fas fa-tachometer-alt text-white"></i> PERFORMANCE
+          FIRST</span
+        >
+        <span
+          class="text-white border px-3 py-3 text-xs md:px-4 md:py-3 md:text-[8px] font-semibold float-icon rounded-lg bottom-[20%] left-[5%] absolute"
+          ><i class="fa-solid fa-code text-white"></i> CLEAN CODE</span
+        >
+        <span
+          class="text-white border px-3 py-3 text-xs md:px-4 md:py-3 md:text-[8px] font-semibold float-icon rounded-lg bottom-[15%] left-[5%] absolute"
+          ><i class="fas fa-shield-alt text-white mr-2"></i> RELIABLE</span
+        >
       </div>
     </div>
-    <div>
-      <h1>Our Services</h1>
+    <div class="text-center">
+      <h1 class="font-semibold text-slate-300">EXPLORE PORTFOLIO</h1>
+      <i class="fa-solid fa-arrow-down animate-bounce text-white"></i>
     </div>
+
+    <div>
+      <div class="text-center mt-9">
+        <h1 class="font-semibold text-white md:text-4xl text-[29px]">
+          Core Competencies
+        </h1>
+        <p class="text-slate-300 mt-3 md:text-[23px] p-2 text-[19px]">
+          Technical tools selected for their reliability and ability to deliver
+          premium experiences.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid md:grid-cols-4 gap-5 p-6">
+        <div
+          class="border p-5 text-center rounded-xl transition transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(139,92,246,0.5)] cursor-pointer"
+        >
+          <i
+            class="fab fa-js bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-violet-500 to-purple-700 text-[26px]"
+          ></i>
+          <h1 class="font-semibold md:text-[25px] text-[19px] text-white">
+            Next.js
+          </h1>
+        </div>
+        <div
+          class="border p-5 text-center rounded-xl transition transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(139,92,246,0.5)] cursor-pointer"
+        >
+          <i
+            class="fa-solid fa-code bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-violet-500 to-purple-700 text-[26px]"
+          ></i>
+          <h1 class="font-semibold md:text-[25px] text-[19px] text-white">
+            React
+          </h1>
+        </div>
+        <div
+          class="border p-5 text-center rounded-xl transition transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(139,92,246,0.5)] cursor-pointer"
+        >
+          <i
+            class="fas fa-file-code bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-violet-500 to-purple-700 text-[26px]"
+          ></i>
+          <h1 class="font-semibold md:text-[25px] text-[19px] text-white">
+            TypeScript
+          </h1>
+        </div>
+        <div
+          class="border p-5 text-center rounded-xl transition transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(139,92,246,0.5)] cursor-pointer"
+        >
+          <i
+            class="fas fa-archive bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-violet-500 to-purple-700 text-[26px]"
+          ></i>
+          <h1 class="font-semibold md:text-[25px] text-[19px] text-white">
+            Node.js
+          </h1>
+        </div>
+        <div
+          class="border p-5 text-center rounded-xl transition transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(139,92,246,0.5)] cursor-pointerrounded-xl transition transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(139,92,246,0.5)] cursor-pointer"
+        >
+          <i
+            class="fab fa-github bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-violet-500 to-purple-700 text-[26px]"
+          ></i>
+          <h1 class="font-semibold md:text-[25px] text-[19px] text-white">
+            Git/GitHub
+          </h1>
+        </div>
+        <div
+          class="border p-5 text-center rounded-xl transition transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(139,92,246,0.5)] cursor-pointer"
+        >
+          <i
+            class="fas fa-server bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-violet-500 to-purple-700 text-[26px]"
+          ></i>
+          <h1 class="font-semibold md:text-[25px] text-[19px] text-white">
+            REST APIs
+          </h1>
+        </div>
+        <div
+          class="border p-5 text-center rounded-xl transition transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(139,92,246,0.5)] cursor-pointer"
+        >
+          <i
+            class="fas fa-mobile-alt bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-violet-500 to-purple-700 text-[26px]"
+          ></i>
+          <h1 class="font-semibold md:text-[25px] text-[19px] text-white">
+            Tailwind CSS
+          </h1>
+        </div>
+        <div
+          class="border p-5 text-center rounded-xl transition transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(139,92,246,0.5)] cursor-pointer"
+        >
+          <i
+            class="fas fa-database bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-violet-500 to-purple-700 text-[26px]"
+          ></i>
+          <h1 class="font-semibold md:text-[25px] text-[19px] text-white">
+            PostgreSQL
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="text-center mt-9">
+        <h1 class="font-semibold text-white md:text-4xl text-[29px]">
+          Selected Works
+        </h1>
+        <p class="text-slate-300 mt-3 md:text-[23px] p-3 text-[19px]">
+          Focused on building high-performance applications with a strong
+          emphasis on architecture and UX.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-gray-800 p-2 text-center">
+      <button
+        class="font-semibold text-slate-300 mr-5 hover:bg-gray-400 p-3 hover:text-black rounded-lg text-[14px]"
+      >
+        <i class="fas fa-globe text-white mr-3"></i>WEB SIDE
+      </button>
+      <button
+        class="font-semibold hover:bg-gray-400 rounded-lg p-3 hover:text-black text-slate-300 text-[14px]"
+      >
+        <i class="fas fa-mobile-alt text-white mr-3"></i>MOBILE SIDE
+      </button>
+    </div>
+
+    <div class="md:grid-cols-2 grid md:gap-8 md:p-20 p-5">
+      <div
+        class="bg-white transition rounded-3xl transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(139,92,246,0.5)] cursor-pointer"
+      >
+        <img src="/image/Home.png" class="md:w-[700px]" alt="" />
+        <div class="">
+          <h1 class="font-semibold p-3 p-5 ml-5 text-[23px] text-black">
+            E Store - Mobile/web (Community)
+          </h1>
+          <p class="font-semibold text-slate-600 p-2 ml-5">
+            An e-store (mobile/web) is an online shop that allows customers to
+            browse, order, and pay for products anytime using their phone or
+            computer.
+          </p>
+
+          <div class="flex gap-2 ml-5 mt-5">
+            <h1
+              class="font-semibold shadow-md text-[13px] px-4 border rounded-full p-1 text-black"
+            >
+              HTML
+            </h1>
+            <h1
+              class="font-semibold text-[13px] border shadow-md rounded-full p-1 text-black"
+            >
+              TAILWIND CSS
+            </h1>
+            <h1
+              class="font-semibold text-[12px] border shadow-md rounded-full p-1 text-black"
+            >
+              FRAMER MOTION
+            </h1>
+            <hr />
+          </div>
+          <div class="flex justify-between">
+            <div class="flex gap-2 mt-14 pb-5 hover:text-slate-400">
+              <i
+                class="fas border rounded-full border-black ml-4 p-2 fa-eye"
+              ></i>
+              <a href="https://iphone-iota-seven.vercel.app/"
+                ><h1 class="p-2 font-semibold">PREVIEW</h1></a
+              >
+            </div>
+            <div class="flex gap-2 mt-14 pb-5 hover:text-slate-400">
+              <i
+                class="fab fa-github border rounded-full border-black ml-4 p-2"
+              ></i>
+              <a href="https://github.com/Feranmi-X/iphone.git"
+                ><h1 class="p-2 font-semibold mr-6">CODE</h1></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-white transition mt-10 rounded-3xl transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(139,92,246,0.5)] cursor-pointer"
+      >
+        <img src="/image/Landing page.png" class="md:w-[700px]" alt="" />
+        <div class="">
+          <h1 class="font-semibold p-3 p-5 ml-5 text-[23px] text-black">
+            Positivus-Landing
+          </h1>
+          <p class="font-semibold text-slate-600 p-2 ml-5">
+            Our digital marketing agency helps businesses grow and succeed
+            online through a range of services including SEO, PPC, social media
+            marketing, and content creation.
+          </p>
+
+          <div class="flex gap-2 ml-5 mt-5">
+            <h1
+              class="font-semibold shadow-md text-[13px] px-4 border rounded-full p-1 text-black"
+            >
+              HTML
+            </h1>
+            <h1
+              class="font-semibold text-[13px] border shadow-md rounded-full p-1 text-black"
+            >
+              TAILWIND CSS
+            </h1>
+            <h1
+              class="font-semibold text-[12px] border shadow-md rounded-full p-1 text-black"
+            >
+              FRAMER MOTION
+            </h1>
+            <hr />
+          </div>
+          <div class="flex justify-between">
+            <div class="flex gap-2 mt-14 pb-5 hover:text-slate-400">
+              <i
+                class="fas border rounded-full border-black ml-4 p-2 fa-eye"
+              ></i>
+              <a href="https://project-x-alpha-seven.vercel.app/"
+                ><h1 class="p-2 font-semibold">PREVIEW</h1></a
+              >
+            </div>
+            <div class="flex gap-2 mt-14 pb-5 hover:text-slate-400">
+              <i
+                class="fab fa-github border rounded-full border-black ml-4 p-2"
+              ></i>
+              <a href="https://github.com/Feranmi-X/projectX.git"
+                ><h1 class="p-2 font-semibold mr-6">CODE</h1></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-white transition mt-10 rounded-3xl transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(139,92,246,0.5)] cursor-pointer"
+      >
+        <img src="/image/banner.png" class="md:w-[700px]" alt="" />
+        <div class="">
+          <h1 class="font-semibold p-3 p-5 ml-5 text-[23px] text-black">
+            FUNIRO
+          </h1>
+          <p class="font-semibold text-slate-600 p-2 ml-5">
+            Funiro brings modern, stylish furniture to your home, making every
+            space comfortable and beautiful.
+          </p>
+
+          <div class="flex gap-2 ml-5 mt-5">
+            <h1
+              class="font-semibold shadow-md text-[13px] px-4 border rounded-full p-1 text-black"
+            >
+              HTML
+            </h1>
+            <h1
+              class="font-semibold text-[13px] border shadow-md rounded-full p-1 text-black"
+            >
+              TAILWIND CSS
+            </h1>
+            <h1
+              class="font-semibold text-[12px] border shadow-md rounded-full p-1 text-black"
+            >
+              FRAMER MOTION
+            </h1>
+            <hr />
+          </div>
+          <div class="flex justify-between">
+            <div class="flex gap-2 mt-14 pb-5 hover:text-slate-400">
+              <i
+                class="fas border rounded-full border-black ml-4 p-2 fa-eye"
+              ></i>
+              <a href="https://furniro-orpin-three.vercel.app/"
+                ><h1 class="p-2 font-semibold">PREVIEW</h1></a
+              >
+            </div>
+            <div class="flex gap-2 mt-14 pb-5 hover:text-slate-400">
+              <i
+                class="fab fa-github border rounded-full border-black ml-4 p-2"
+              ></i>
+              <a href="https://github.com/Feranmi-X/project.git"
+                ><h1 class="p-2 font-semibold mr-6">CODE</h1></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-white transition mt-10 rounded-3xl transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(139,92,246,0.5)] cursor-pointer"
+      >
+        <img src="/image/Hero Section.png" class="md:w-[700px]" alt="" />
+        <div class="">
+          <h1 class="font-semibold p-3 p-5 ml-5 text-[23px] text-black">
+            Nexcent
+          </h1>
+          <p class="font-semibold text-slate-600 p-2 ml-5">
+            Where to grow your business as a photographer. site or social media?
+          </p>
+
+          <div class="flex gap-2 ml-5 mt-5">
+            <h1
+              class="font-semibold shadow-md text-[13px] px-4 border rounded-full p-1 text-black"
+            >
+              HTML
+            </h1>
+            <h1
+              class="font-semibold text-[13px] border shadow-md rounded-full p-1 text-black"
+            >
+              TAILWIND CSS
+            </h1>
+            <h1
+              class="font-semibold text-[12px] border shadow-md rounded-full p-1 text-black"
+            >
+              FRAMER MOTION
+            </h1>
+            <hr />
+          </div>
+          <div class="flex justify-between">
+            <div class="flex gap-2 mt-32 pb-5 hover:text-slate-400">
+              <i
+                class="fas border rounded-full border-black ml-4 p-2 fa-eye"
+              ></i>
+              <a href="https://freeman-olive.vercel.app/"
+                ><h1 class="p-2 font-semibold">PREVIEW</h1></a
+              >
+            </div>
+            <div class="flex gap-2 pb-5 mt-32 hover:text-slate-400">
+              <i
+                class="fab fa-github border rounded-full border-black ml-4 p-2"
+              ></i>
+              <a href="https://github.com/Feranmi-X/freeman.git"
+                ><h1 class="p-2 font-semibold mr-6">CODE</h1></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-white transition mt-10 rounded-3xl transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(139,92,246,0.5)] cursor-pointer"
+      >
+        <img src="/image/Default.png" class="md:w-[700px]" alt="" />
+        <div class="">
+          <h1 class="font-semibold p-3 p-5 ml-5 text-[23px] text-black">
+            Snow-Dashboard-UI-Kit
+          </h1>
+          <p class="font-semibold text-slate-600 p-2 ml-5">
+            Dashboard with real time data
+          </p>
+
+          <div class="flex gap-2 ml-5 mt-5">
+            <h1
+              class="font-semibold shadow-md text-[13px] px-4 border rounded-full p-1 text-black"
+            >
+              HTML
+            </h1>
+            <h1
+              class="font-semibold text-[13px] border shadow-md rounded-full p-1 text-black"
+            >
+              TAILWIND CSS
+            </h1>
+            <h1
+              class="font-semibold text-[12px] border shadow-md rounded-full p-1 text-black"
+            >
+              FRAMER MOTION
+            </h1>
+            <hr />
+          </div>
+          <div class="flex justify-between">
+            <div class="flex gap-2 mt-32 pb-5 hover:text-slate-400">
+              <i
+                class="fas border rounded-full border-black ml-4 p-2 fa-eye"
+              ></i>
+              <a href="https://ul-sigma.vercel.app/"
+                ><h1 class="p-2 font-semibold">PREVIEW</h1></a
+              >
+            </div>
+            <div class="flex gap-2 pb-5 mt-32 hover:text-slate-400">
+              <i
+                class="fab fa-github border rounded-full border-black ml-4 p-2"
+              ></i>
+              <a href="https://github.com/Feranmi-X/ul.git"
+                ><h1 class="p-2 font-semibold mr-6">CODE</h1></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-white transition mt-10 rounded-3xl transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(139,92,246,0.5)] cursor-pointer"
+      >
+        <img src="/image/hq720(1).jpg" class="md:w-[700px]" alt="" />
+        <div class="">
+          <h1 class="font-semibold p-3 p-5 ml-5 text-[23px] text-black">
+            YOUTUBE
+          </h1>
+          <p class="font-semibold text-slate-600 p-2 ml-5">
+            Where to grow your business as a photographer. site or social media?
+          </p>
+
+          <div class="flex gap-2 ml-5 mt-5">
+            <h1
+              class="font-semibold shadow-md text-[13px] px-4 border rounded-full p-1 text-black"
+            >
+              HTML
+            </h1>
+            <h1
+              class="font-semibold text-[13px] border shadow-md rounded-full p-1 text-black"
+            >
+              TAILWIND CSS
+            </h1>
+            <h1
+              class="font-semibold text-[12px] border shadow-md rounded-full p-1 text-black"
+            >
+              FRAMER MOTION
+            </h1>
+            <hr />
+          </div>
+          <div class="flex justify-between">
+            <div class="flex gap-2 mt-44 pb-5 hover:text-slate-400">
+              <i
+                class="fas border rounded-full border-black ml-4 p-2 fa-eye"
+              ></i>
+              <a href="https://youtube-lovat-five.vercel.app/"
+                ><h1 class="p-2 font-semibold">PREVIEW</h1></a
+              >
+            </div>
+            <div class="flex gap-2 pb-5 mt-44 hover:text-slate-400">
+              <i
+                class="fab fa-github border rounded-full border-black ml-4 p-2"
+              ></i>
+              <a href="https://github.com/Feranmi-X/youtube.git"
+                ><h1 class="p-2 font-semibold mr-6">CODE</h1></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const words = ["Mobile Developer", "Frontend Developer", "Web Developer"];
+
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      const typingSpeed = 120;
+      const deletingSpeed = 80;
+      const delayBetweenWords = 1200;
+
+      const textElement = document.getElementById("typing-text");
+
+      function typeEffect() {
+        const currentWord = words[wordIndex];
+
+        if (!isDeleting) {
+          textElement.textContent = currentWord.substring(0, charIndex + 1);
+          charIndex++;
+
+          if (charIndex === currentWord.length) {
+            setTimeout(() => (isDeleting = true), delayBetweenWords);
+          }
+        } else {
+          textElement.textContent = currentWord.substring(0, charIndex - 1);
+          charIndex--;
+
+          if (charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+          }
+        }
+
+        setTimeout(typeEffect, isDeleting ? deletingSpeed : typingSpeed);
+      }
+
+      typeEffect();
+    </script>
     <script>
       const toggle = document.getElementById("toggleDark");
       toggle.addEventListener("click", () => {
