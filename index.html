@@ -83,24 +83,24 @@
         class="hidden md:flex gap-5 list-none font-semibold text-slate-400"
       >
         <li
-          class="hover:hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-br hover:from-blue-500 hover:via-violet-500 hover:to-purple-700 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-br before:from-blue-500 before:via-violet-500 before:to-purple-700 before:transition-all before:duration-300 hover:before:w-full cursor-pointer"
+          class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-br hover:from-blue-500 hover:via-violet-500 hover:to-purple-700 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-br before:from-blue-500 before:via-violet-500 before:to-purple-700 before:transition-all before:duration-300 hover:before:w-full cursor-pointer"
         >
           <a href="/index.html">Home</a>
         </li>
         <li
           class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-br hover:from-blue-500 hover:via-violet-500 hover:to-purple-700 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-br before:from-blue-500 before:via-violet-500 before:to-purple-700 before:transition-all before:duration-300 hover:before:w-full cursor-pointer"
         >
-          About
+          <a href="#about"> About</a>
         </li>
         <li
           class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-br hover:from-blue-500 hover:via-violet-500 hover:to-purple-700 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-br before:from-blue-500 before:via-violet-500 before:to-purple-700 before:transition-all before:duration-300 hover:before:w-full cursor-pointer"
         >
-          Pofolio
+          <a href="#portfolio">Pofolio</a>
         </li>
         <li
           class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-br hover:from-blue-500 hover:via-violet-500 hover:to-purple-700 before:content-[''] before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-br before:from-blue-500 before:via-violet-500 before:to-purple-700 before:transition-all before:duration-300 hover:before:w-full cursor-pointer"
         >
-          Contact Us
+          <a href="#contact">Contact Us</a>
         </li>
       </nav>
 
@@ -122,12 +122,20 @@
       <div
         x-show="open"
         @click.away="open = false"
-        class="absolute top-[60px] right-4 bg-white font-semibold text-slate-400 list-none border rounded shadow-md w-40 flex flex-col gap-2 p-3 md:hidden"
+        class="absolute top-[60px] right-4 bg-black font-semibold bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-violet-500 to-purple-70list-none shadow-lg rounded shadow-md w-40 flex flex-col gap-2 p-3 md:hidden"
       >
-        <li class="hover:text-black cursor-pointer">Home</li>
-        <li class="hover:text-black cursor-pointer">About</li>
-        <li class="hover:text-black cursor-pointer">Pofolio</li>
-        <li class="hover:text-black cursor-pointer">Contact Us</li>
+        <li class="hover:text-black cursor-pointer">
+          <a href="/index.html">Home</a>
+        </li>
+        <li class="hover:text-black cursor-pointer">
+          <a href="#about"> About</a>
+        </li>
+        <li class="hover:text-black cursor-pointer">
+          <a href="#portfolio">Pofolio</a>
+        </li>
+        <li class="hover:text-black cursor-pointer">
+          <a href="#contact">Contact Us</a>
+        </li>
         <!-- Optional icons in mobile menu -->
         <div class="flex gap-3 mt-2">
           <button id="toggleDark" class="fa-solid fa-moon"></button>
@@ -227,11 +235,13 @@
     </div>
     <div class="text-center">
       <h1 class="font-semibold text-slate-300">EXPLORE PORTFOLIO</h1>
-      <i class="fa-solid fa-arrow-down animate-bounce text-white"></i>
+      <i class="fa-solid fa-arrow-down animate-bounce text-white"
+        ><a href="#down"></a
+      ></i>
     </div>
 
     <div>
-      <div class="text-center mt-9">
+      <div id="down" class="text-center mt-9">
         <h1
           class="font-semibold bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-violet-500 to-purple-700 md:text-4xl text-[29px]"
         >
@@ -359,6 +369,7 @@
       class="md:grid-cols-2 grid md:gap-8 md:p-20 p-5 flex transition-transform duration-500 easa-in-out"
     >
       <div
+        id="portfolio"
         class="bg-white transition rounded-3xl transform duration-300 ease-out hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(139,92,246,0.5)] cursor-pointer"
       >
         <img src="/image/Home.png" class="md:w-[700px] -pt-5" alt="" />
@@ -693,7 +704,7 @@
           alt=""
         />
       </div>
-      <div class="p-9">
+      <div id="about" class="p-9">
         <h1
           class="font-semibold mb-7 bg-clip-text text-transparent bg-gradient-to-br from-blue-500 via-violet-500 to-purple-700 md:text-[20px] text-[29px]"
         >
@@ -847,7 +858,7 @@
     <div
       class="md:flex md:gap-20 mt-10 bg-gray-900 md:px-10 md:mx-10 p-5 rounded-3xl"
     >
-      <div class="p-5 bg-black mt-6 rounded-3xl">
+      <div id="contact" class="p-5 bg-black mt-6 rounded-3xl">
         <h1 class="text-[24px] font-semibold text-white">
           Contact Information
         </h1>
@@ -977,7 +988,7 @@
       >
         FERATECH.
       </h1>
-      <p class="text-white">© 2026 Developed with Feranmi</p>
+      <p class="text-white">© 2026 Developed by Feranmi</p>
     </footer>
 
     <script>
